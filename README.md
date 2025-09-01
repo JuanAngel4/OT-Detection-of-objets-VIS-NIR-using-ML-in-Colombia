@@ -8,5 +8,6 @@ Idealmente VIS:400–700 nm NIR: 825–875 nm
 Salidas: 
 Al menos 5 clases, idealmente casas,edificios,rios,arboles,automoviles,camiones.
 
+# Estado actual del proyecto
+Exploracion de bases de datos.
 
-Estado actual del proyecto: Investigacion previa.
