@@ -7,8 +7,7 @@ Idealmente VIS:400–700 nm NIR: 825–875 nm
 <img width="636" height="350" alt="image" src="https://github.com/user-attachments/assets/f0eefd3b-2d63-487e-ad4c-a4c8cc2b6d68" />
 
 # Exploracion de datos - Para deteccion de objetos(carros,camionetas,vans,avionetas...)
+Histograma general del dataset en RGB, histogramas puntuales segun clase.
+<img width="768" height="316" alt="image" src="https://github.com/user-attachments/assets/a853a60d-d07b-4261-9122-db69f8c24068" />
 
-<img width="1189" height="790" alt="image" src="https://github.com/user-attachments/assets/d4e9af38-acf7-43fc-a605-e311b12eb732" />
-
-Exploracion de bases de datos.
 
