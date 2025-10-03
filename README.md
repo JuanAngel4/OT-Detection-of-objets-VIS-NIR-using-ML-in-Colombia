@@ -2,6 +2,9 @@
 Este repositorio contiene el desarrollo de un sistema de detección de objetos basado en imágenes multiespectrales (VIS y NIR), enfocado en el análisis de observación terrestre (OT) en regiones de Colombia. Se emplean técnicas de visión por computadora e inteligencia artificial, especialmente arquitecturas de redes neuronales.
 Se estudio la composicion espectral en multiples bandas para objetos puntuales, entendiendo su posible discriminacion como una distribucion probabilistica a su vez de un analisis frecuencial.
 
+<img width="532" height="402" alt="image" src="https://github.com/user-attachments/assets/5c145a31-fe28-4dcc-ad61-4f23480c83a9" />
+
+
 ## ETAPA 1 - REVISION DEL ESTADO DEL ARTE
 Se estudio, desde un punto de vista fisico y computacional, las bases que se pueden llevar a cabo, utilizando principalmente la fisica explicada por los coeficientes de fresnel a su vez su relacion con el indice de reflexion de cada material y su intenisada asociada, lo cual se relaciona con la naturaleza de la obtencion de imagenes digitales que poseen parte estocastica y determinista.
 Libros consultados:  - Digital Image Processing Using MATLAB
