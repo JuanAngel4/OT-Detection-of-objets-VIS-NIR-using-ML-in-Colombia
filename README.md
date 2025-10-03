@@ -36,9 +36,27 @@ Por ultimo, se discrimino cada clase en marcaras que solo contengan informacion 
 <img width="450" height="250" alt="image" src="https://github.com/user-attachments/assets/1713c1b5-a724-4964-a16d-205543eecde2" />
 <img width="450" height="250" alt="image" src="https://github.com/user-attachments/assets/20db424c-c889-4a4d-8b04-146ce58ae83d" />
 
-
-
 ### Data_Exploration_object_detection
+Primeramente se etudio la conformacion del dataset, la forma de anotacion, consecuentemente se realizo un hisotgrama general de el dataset para estudiar la distribucion general para los 4 canales a disposicion. (R,G,B,NIR)
+Primero, el hisotgrama acomulado de las primeras 1000 pares (1000 RGB,NIR).
+
+<img width="636" height="350" alt="image" src="https://github.com/user-attachments/assets/b8b9769a-b8dc-4bf7-9ea9-531b37abc94d" />
+
+Forma de anotacion:
+ - 554 605 607 558 1004 996 1016 1021 ->  las 4 esquinas del polígono (x1, x2, x3, x4, y1, y2, y3, y4).
+   
+<img width="481" height="504" alt="image" src="https://github.com/user-attachments/assets/03d258b8-a8dd-431c-862d-bd17c1bd380f" />
+
+Se  puede observar en la parte inferior de la imagen, las bounding boxes de el objeto etiquetado.
+Si se desea ver la bouding box con solo la informacion dentro de la caja delimitadora, con una mascara, nos queda de la siguiente forma, el mismo objeto de la primera imagen:
+
+<img width="515" height="276" alt="image" src="https://github.com/user-attachments/assets/7c954d74-964e-4b27-9914-41d6658467cd" />
+
+Ahora bien, se discrimino cada bounding box segun la clase, para asi, de forma analoga al estudio de covertura terrestre, generar una densidad de probabilidad para cada clase, siendo los resultados obtenidos los siguientes para todas las clases etiquetadas.
+
+<img width="990" height="1490" alt="image" src="https://github.com/user-attachments/assets/d7c36ddd-aded-4049-b8a9-2beb98a2dbc2" />
+
+
 ## ETAPA 4 - Diseño e implementación del modelo IA
 En Desarrollo.
 ## ETAPA 5 - Evaluación y validación con datos QBee
