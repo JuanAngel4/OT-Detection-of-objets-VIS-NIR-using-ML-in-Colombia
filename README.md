@@ -42,6 +42,7 @@ Por ultimo, se discrimino cada clase en marcaras que solo contengan informacion 
 ### Data_Exploration_object_detection
 Primeramente se etudio la conformacion del dataset, la forma de anotacion, consecuentemente se realizo un hisotgrama general de el dataset para estudiar la distribucion general para los 4 canales a disposicion. (R,G,B,NIR)
 Primero, el hisotgrama acomulado de las primeras 1000 pares (1000 RGB,NIR).
+<img width="768" height="316" alt="image" src="https://github.com/user-attachments/assets/a853a60d-d07b-4261-9122-db69f8c24068" />
 
 <img width="636" height="350" alt="image" src="https://github.com/user-attachments/assets/b8b9769a-b8dc-4bf7-9ea9-531b37abc94d" />
 
@@ -77,8 +78,5 @@ Dos imagenes, una en el espectro visible y otra en el infrarojo cercano.
 Idealmente VIS:400–700 nm NIR: 825–875 nm
 <img width="636" height="350" alt="image" src="https://github.com/user-attachments/assets/f0eefd3b-2d63-487e-ad4c-a4c8cc2b6d68" />
 
-# Exploracion de datos - Para deteccion de objetos(carros,camionetas,vans,avionetas...)
-Histograma general del dataset en RGB, histogramas puntuales segun clase.
-<img width="768" height="316" alt="image" src="https://github.com/user-attachments/assets/a853a60d-d07b-4261-9122-db69f8c24068" />
 
 
