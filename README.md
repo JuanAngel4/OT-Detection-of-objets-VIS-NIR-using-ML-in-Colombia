@@ -17,18 +17,21 @@ A continuacion se mostraran resultados obtenidos para cada caso, ademas de expon
 ### Data_Exploration_land_cover.py
 Primeramente, se expone un historgama general de todas las imagenes a trabajar, de esta manera se puede entender el aporte de intensidades sobre la densidad de probabilidad de cada canal.
 <img width="768" height="317" alt="image" src="https://github.com/user-attachments/assets/94ed75d3-7add-4d68-9a44-8340621699c6" />
+
 Es importante mencionar que, para la imagen anterior, no fue realizado un filtro de las intensidades que indican saturacion, es decir, el rango 252-255,y tambien los valores en 0-4, que usualmente indican ruido o informacion no definida.
 Ahora bien, se indico la forma de etiquetado:
+
 <img width="950" height="384" alt="image" src="https://github.com/user-attachments/assets/c0ee7ce1-112b-48ac-a5d1-af6313ed2bfc" />
 Tambien se indico cada clase de una imagen para vizualizacion de la segmentacion semantica de las clases en el dataset.
-<img width="1453" height="791" alt="image" src="https://github.com/user-attachments/assets/137ec71c-5870-47c1-b298-268d32c46e57" />
+
+<img width="1000" height="600" alt="image" src="https://github.com/user-attachments/assets/137ec71c-5870-47c1-b298-268d32c46e57" />
 Por ultimo, se discrimino cada clase en marcaras que solo contengan informacion de la clase visualizada con el fin de predecir la densidad de probabilidad de cada clase en especifico.
-<img width="722" height="470" alt="image" src="https://github.com/user-attachments/assets/897ede3f-5573-47d4-b5a5-524ce81878b8" />
-<img width="722" height="470" alt="image" src="https://github.com/user-attachments/assets/e8d90ddb-55c9-42a7-b812-0df140fbe2b5" />
-<img width="722" height="470" alt="image" src="https://github.com/user-attachments/assets/1992ba7c-f4cd-4267-ad59-536287286e06" />
-<img width="704" height="470" alt="image" src="https://github.com/user-attachments/assets/d91bb13b-b8ad-41a7-bf4a-937efb2807e1" />
-<img width="722" height="470" alt="image" src="https://github.com/user-attachments/assets/1713c1b5-a724-4964-a16d-205543eecde2" />
-<img width="722" height="470" alt="image" src="https://github.com/user-attachments/assets/20db424c-c889-4a4d-8b04-146ce58ae83d" />
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/897ede3f-5573-47d4-b5a5-524ce81878b8" />
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/e8d90ddb-55c9-42a7-b812-0df140fbe2b5" />
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/1992ba7c-f4cd-4267-ad59-536287286e06" />
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/d91bb13b-b8ad-41a7-bf4a-937efb2807e1" />
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/1713c1b5-a724-4964-a16d-205543eecde2" />
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/20db424c-c889-4a4d-8b04-146ce58ae83d" />
 
 
 
