@@ -57,11 +57,17 @@ Ahora bien, se discrimino cada bounding box segun la clase, para asi, de forma a
 <img width="990" height="1490" alt="image" src="https://github.com/user-attachments/assets/d7c36ddd-aded-4049-b8a9-2beb98a2dbc2" />
 
 
-## ETAPA 4 - Diseño e implementación del modelo IA
+## ETAPA 4 - Exploracion de datos extraidos de Queen-Bee y comparacion con datasets explorados
 En Desarrollo.
-## ETAPA 5 - Evaluación y validación con datos QBee
+## ETAPA 5 - Conformacion de conjunto de datos a utilizar para modelo AI
+Luego de explorar los datos extraidos de la QUEEN-BEE, se definio la conformacion de 2 conjuntos de datos, distribuidos de la siguiente manera, de los cuales  L1 sera el conjunto final utilizado para el desarrollo del modelo de inteligencia artificial para reconocimiento de objetos.
+
+<img width="611" height="541" alt="Diagrama sin título" src="https://github.com/user-attachments/assets/2898d412-d39e-4768-9670-a91536854d42" />
+
+
+## ETAPA 6 - Evaluación y validación con datos QBee
 No iniciado.
-## ETAPA 6 - Análisis de resultados y redacción técnica
+## ETAPA 7 - Análisis de resultados y redacción técnica
 No iniciado.
 # Entrada (2 imagenes)
 Dos imagenes, una en el espectro visible y otra en el infrarojo cercano.
