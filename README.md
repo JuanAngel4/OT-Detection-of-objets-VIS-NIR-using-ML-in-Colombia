@@ -11,8 +11,28 @@ Libros consultados:  - Digital Image Processing Using MATLAB
 El dataset VEDAI (Vehicle Detection in Aerial Imagery) está compuesto por ortofotos aéreas tomadas en Utah (EE. UU.) desde avión, con resolución espacial de 12,5 cm/px. Las imágenes están disponibles tanto en espectro RGB como en infrarrojo cercano (NIR), y se encuentran organizadas en tiles de 1024×1024 píxeles. El conjunto incluye más de 1.200 vehículos anotados mediante bounding boxes, distribuidos en distintas categorías como automóviles, furgonetas, camiones, pick-ups y autobuses, lo que lo convierte en un recurso de alta calidad para tareas de detección de objetos en imágenes aéreas de muy alta resolución.
 - El dataset publicado por Humans in the Loop en colaboración con el Mohammed Bin Rashid Space Center (MBRSC) consiste en imágenes aéreas de Dubái obtenidas por satélites del MBRSC y anotadas con segmentación semántica pixel-wise en 6 clases: edificios, tierra sin pavimentar, carreteras, vegetación, agua y no etiquetado. El conjunto contiene un total de 72 imágenes agrupadas en 6 tiles principales, con codificación de colores para cada clase. Las anotaciones fueron realizadas por los aprendices de la Roia Foundation en Siria, en el marco de un proyecto abierto y de acceso libre.
 
-## ETAPA 3 - Preprocesamiento multiespectral (espacio n-dimensional)
-En desarrollo.
+## ETAPA 3 -   Estudio multiespectral de datasets seleccionados para cobertura terrestre y objetos.(data_exploration)
+En la carpeta "data_exploration" se llevo a cabo el estudio independiente de cada dataset y su contenido, ademas de exponer su forma de anotacion, mas una detallada representacion de sus etiquetas para cada caso, cada estudio independiente se llevo a cabo en las sub-carpetas "Data_Exploration_land_cover.py" y "Data_Exploration_object_detection".
+A continuacion se mostraran resultados obtenidos para cada caso, ademas de exponer las conclusiones para cada caso.todas las imagenes presentadas a partir de esta seccion estarán en la carpeta "relevant_outputs".
+### Data_Exploration_land_cover.py
+Primeramente, se expone un historgama general de todas las imagenes a trabajar, de esta manera se puede entender el aporte de intensidades sobre la densidad de probabilidad de cada canal.
+<img width="768" height="317" alt="image" src="https://github.com/user-attachments/assets/94ed75d3-7add-4d68-9a44-8340621699c6" />
+Es importante mencionar que, para la imagen anterior, no fue realizado un filtro de las intensidades que indican saturacion, es decir, el rango 252-255,y tambien los valores en 0-4, que usualmente indican ruido o informacion no definida.
+Ahora bien, se indico la forma de etiquetado:
+<img width="950" height="384" alt="image" src="https://github.com/user-attachments/assets/c0ee7ce1-112b-48ac-a5d1-af6313ed2bfc" />
+Tambien se indico cada clase de una imagen para vizualizacion de la segmentacion semantica de las clases en el dataset.
+<img width="1453" height="791" alt="image" src="https://github.com/user-attachments/assets/137ec71c-5870-47c1-b298-268d32c46e57" />
+Por ultimo, se discrimino cada clase en marcaras que solo contengan informacion de la clase visualizada con el fin de predecir la densidad de probabilidad de cada clase en especifico.
+<img width="722" height="470" alt="image" src="https://github.com/user-attachments/assets/897ede3f-5573-47d4-b5a5-524ce81878b8" />
+<img width="722" height="470" alt="image" src="https://github.com/user-attachments/assets/e8d90ddb-55c9-42a7-b812-0df140fbe2b5" />
+<img width="722" height="470" alt="image" src="https://github.com/user-attachments/assets/1992ba7c-f4cd-4267-ad59-536287286e06" />
+<img width="704" height="470" alt="image" src="https://github.com/user-attachments/assets/d91bb13b-b8ad-41a7-bf4a-937efb2807e1" />
+<img width="722" height="470" alt="image" src="https://github.com/user-attachments/assets/1713c1b5-a724-4964-a16d-205543eecde2" />
+<img width="722" height="470" alt="image" src="https://github.com/user-attachments/assets/20db424c-c889-4a4d-8b04-146ce58ae83d" />
+
+
+
+### Data_Exploration_object_detection
 ## ETAPA 4 - Diseño e implementación del modelo IA
 En Desarrollo.
 ## ETAPA 5 - Evaluación y validación con datos QBee
