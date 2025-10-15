@@ -1,91 +1,190 @@
-# OT-Deteccion-de-objetos-VIS-NIR-ML-Colombia
-Este repositorio contiene el desarrollo de un sistema de detección de objetos basado en imágenes multiespectrales (VIS y NIR), enfocado en el análisis de observación terrestre (OT) en regiones de Colombia. Se emplean técnicas de visión por computadora e inteligencia artificial, especialmente arquitecturas de redes neuronales.
-Se estudio la composicion espectral en multiples bandas para objetos puntuales, entendiendo su posible discriminacion como una distribucion probabilistica a su vez de un analisis frecuencial.
+# OT - Detección de Objetos VIS–NIR en Colombia  
+**Sistema de visión multiespectral para observación terrestre con técnicas de inteligencia artificial**
 
-<img width="532" height="402" alt="image" src="https://github.com/user-attachments/assets/5c145a31-fe28-4dcc-ad61-4f23480c83a9" />
+---
+
+Este repositorio contiene el desarrollo de un sistema de detección de objetos basado en imágenes multiespectrales (VIS y NIR), enfocado en el análisis de **observación terrestre (OT)** en regiones de Colombia.  
+Se emplean técnicas de **visión por computador e inteligencia artificial**, especialmente arquitecturas de redes neuronales.  
+
+El estudio aborda la **composición espectral en múltiples bandas** para objetos puntuales, considerando su posible discriminación como una **distribución probabilística** derivada de un **análisis frecuencial**.
+
+<p align="center">
+  <img width="532" height="402" alt="image" src="https://github.com/user-attachments/assets/5c145a31-fe28-4dcc-ad61-4f23480c83a9" />
+</p>
+
+---
+
+## 🧩 Etapa 1 – Revisión del estado del arte  
+
+Se realizó un estudio físico y computacional de las bases del problema, utilizando los **coeficientes de Fresnel** y su relación con el **índice de reflexión** e **intensidad asociada** de cada material.  
+Esto permitió comprender la naturaleza **estocástica y determinista** de la obtención de imágenes digitales.
+
+**Bibliografía consultada:**  
+- *Digital Image Processing Using MATLAB*
+
+---
+
+## 🛰️ Etapa 2 – Exploración del espacio N-dimensional conformado por imágenes multibanda  
+
+Se exploraron diversos datasets de clasificación y segmentación de objetos.  
+Bajo criterios de **resolución espacial**, **bandas espectrales**, **calidad de anotaciones** y **relevancia temática**, se seleccionaron los siguientes conjuntos:
+
+### 📘 Dataset VEDAI  
+
+- **Nombre:** Vehicle Detection in Aerial Imagery (VEDAI)  
+- **Descripción:** Ortofotografías aéreas de Utah (EE. UU.) con resolución de 12,5 cm/píxel.  
+- **Espectros:** RGB y NIR  
+- **Tamaño de tiles:** 1024×1024 px  
+- **Anotaciones:** Bounding boxes en más de 1.200 vehículos, incluyendo automóviles, furgonetas, camiones, pickups y autobuses.  
+- **Aplicación:** Detección de objetos en imágenes aéreas de alta resolución.
+
+### 📗 Dataset MBRSC (Humans in the Loop)  
+
+- **Origen:** Mohammed Bin Rashid Space Center (Dubái)  
+- **Etiquetado:** Segmentación semántica *pixel-wise* con 6 clases: edificios, tierra, carreteras, vegetación, agua y no etiquetado.  
+- **Tamaño:** 72 imágenes agrupadas en 6 tiles principales.  
+- **Anotaciones:** Realizadas por la *Roia Foundation* (Siria).  
+- **Uso:** Análisis de cobertura terrestre.
+
+---
+
+## 🔬 Etapa 3 – Estudio multiespectral de datasets seleccionados (`data_exploration`)  
+
+En la carpeta `data_exploration` se estudió cada dataset, sus anotaciones y representaciones de etiquetas.  
+Los resultados y conclusiones se almacenan en la carpeta `relevant_outputs`.
+
+---
+
+### 🗺️ Data_Exploration_land_cover.py  
+
+Se generó un **histograma general** de todas las imágenes, analizando la densidad de probabilidad de cada canal.
+
+<p align="center">
+  <img width="768" height="317" src="https://github.com/user-attachments/assets/94ed75d3-7add-4d68-9a44-8340621699c6" />
+</p>
+
+> Los valores saturados (252–255) y los muy bajos (0–4) no fueron filtrados, ya que suelen indicar ruido o información no definida.
+
+Se visualizó la forma de etiquetado:
+
+<p align="center">
+  <img width="950" height="384" src="https://github.com/user-attachments/assets/c0ee7ce1-112b-48ac-a5d1-af6313ed2bfc" />
+</p>
+
+Y la segmentación semántica de clases:
+
+<p align="center">
+  <img width="1000" height="600" src="https://github.com/user-attachments/assets/137ec71c-5870-47c1-b298-268d32c46e57" />
+</p>
+
+Finalmente, se generaron **máscaras por clase** para analizar la densidad de probabilidad específica de cada una:
+
+<p align="center">
+  <img width="450" height="250" src="https://github.com/user-attachments/assets/897ede3f-5573-47d4-b5a5-524ce81878b8" />
+  <img width="450" height="250" src="https://github.com/user-attachments/assets/e8d90ddb-55c9-42a7-b812-0df140fbe2b5" />
+  <img width="450" height="250" src="https://github.com/user-attachments/assets/1992ba7c-f4cd-4267-ad59-536287286e06" />
+</p>
+
+---
+
+### 🚗 Data_Exploration_object_detection  
+
+Se analizó la estructura del dataset y su anotación.  
+Posteriormente, se generó un **histograma acumulado** de las primeras 1000 imágenes RGB y NIR:
+
+<p align="center">
+  <img width="768" height="316" src="https://github.com/user-attachments/assets/a853a60d-d07b-4261-9122-db69f8c24068" />
+  <img width="636" height="350" src="https://github.com/user-attachments/assets/b8b9769a-b8dc-4bf7-9ea9-531b37abc94d" />
+</p>
 
 
-## ETAPA 1 - REVISION DEL ESTADO DEL ARTE
-Se estudio, desde un punto de vista fisico y computacional, las bases que se pueden llevar a cabo, utilizando principalmente la fisica explicada por los coeficientes de fresnel a su vez su relacion con el indice de reflexion de cada material y su intenisada asociada, lo cual se relaciona con la naturaleza de la obtencion de imagenes digitales que poseen parte estocastica y determinista.
-Libros consultados:  - Digital Image Processing Using MATLAB
-
-## ETAPA 2 - EXPLORACION DEL ESPACIO N-DIMENSIONAL CONFORMADOS POR LAS IMAGENES EN MULTIPLES BANDAS
-- Se exploraron multiples opciones de dataset para clasificacion de objetos y uno de segmentacion de instancias, sin embargo, bajo criterios de mayor resolucion espacial, bandas espectrales de interes, imagenes correctamente etiquetadas, entre otras caracteristicas de interes se termino eligiendo:
-El dataset VEDAI (Vehicle Detection in Aerial Imagery) está compuesto por ortofotos aéreas tomadas en Utah (EE. UU.) desde avión, con resolución espacial de 12,5 cm/px. Las imágenes están disponibles tanto en espectro RGB como en infrarrojo cercano (NIR), y se encuentran organizadas en tiles de 1024×1024 píxeles. El conjunto incluye más de 1.200 vehículos anotados mediante bounding boxes, distribuidos en distintas categorías como automóviles, furgonetas, camiones, pick-ups y autobuses, lo que lo convierte en un recurso de alta calidad para tareas de detección de objetos en imágenes aéreas de muy alta resolución.
-- El dataset publicado por Humans in the Loop en colaboración con el Mohammed Bin Rashid Space Center (MBRSC) consiste en imágenes aéreas de Dubái obtenidas por satélites del MBRSC y anotadas con segmentación semántica pixel-wise en 6 clases: edificios, tierra sin pavimentar, carreteras, vegetación, agua y no etiquetado. El conjunto contiene un total de 72 imágenes agrupadas en 6 tiles principales, con codificación de colores para cada clase. Las anotaciones fueron realizadas por los aprendices de la Roia Foundation en Siria, en el marco de un proyecto abierto y de acceso libre.
-
-## ETAPA 3 -   Estudio multiespectral de datasets seleccionados para cobertura terrestre y objetos.(data_exploration)
-En la carpeta "data_exploration" se llevo a cabo el estudio independiente de cada dataset y su contenido, ademas de exponer su forma de anotacion, mas una detallada representacion de sus etiquetas para cada caso, cada estudio independiente se llevo a cabo en las sub-carpetas "Data_Exploration_land_cover.py" y "Data_Exploration_object_detection".
-A continuacion se mostraran resultados obtenidos para cada caso, ademas de exponer las conclusiones para cada caso.todas las imagenes presentadas a partir de esta seccion estarán en la carpeta "relevant_outputs".
-### Data_Exploration_land_cover.py
-Primeramente, se expone un historgama general de todas las imagenes a trabajar, de esta manera se puede entender el aporte de intensidades sobre la densidad de probabilidad de cada canal.
-<img width="768" height="317" alt="image" src="https://github.com/user-attachments/assets/94ed75d3-7add-4d68-9a44-8340621699c6" />
-
-Es importante mencionar que, para la imagen anterior, no fue realizado un filtro de las intensidades que indican saturacion, es decir, el rango 252-255,y tambien los valores en 0-4, que usualmente indican ruido o informacion no definida.
-Ahora bien, se indico la forma de etiquetado:
-
-<img width="950" height="384" alt="image" src="https://github.com/user-attachments/assets/c0ee7ce1-112b-48ac-a5d1-af6313ed2bfc" />
-
-Tambien se indico cada clase de una imagen para vizualizacion de la segmentacion semantica de las clases en el dataset.
-
-<img width="1000" height="600" alt="image" src="https://github.com/user-attachments/assets/137ec71c-5870-47c1-b298-268d32c46e57" />
-
-Por ultimo, se discrimino cada clase en marcaras que solo contengan informacion de la clase visualizada con el fin de predecir la densidad de probabilidad de cada clase en especifico.
-
-<img width="450" height="250" alt="image" src="https://github.com/user-attachments/assets/897ede3f-5573-47d4-b5a5-524ce81878b8" />
-<img width="450" height="250" alt="image" src="https://github.com/user-attachments/assets/e8d90ddb-55c9-42a7-b812-0df140fbe2b5" />
-<img width="450" height="250" alt="image" src="https://github.com/user-attachments/assets/1992ba7c-f4cd-4267-ad59-536287286e06" />
-<img width="450" height="250" alt="image" src="https://github.com/user-attachments/assets/d91bb13b-b8ad-41a7-bf4a-937efb2807e1" />
-<img width="450" height="250" alt="image" src="https://github.com/user-attachments/assets/1713c1b5-a724-4964-a16d-205543eecde2" />
-<img width="450" height="250" alt="image" src="https://github.com/user-attachments/assets/20db424c-c889-4a4d-8b04-146ce58ae83d" />
-
-### Data_Exploration_object_detection
-Primeramente se etudio la conformacion del dataset, la forma de anotacion, consecuentemente se realizo un hisotgrama general de el dataset para estudiar la distribucion general para los 4 canales a disposicion. (R,G,B,NIR)
-Primero, el hisotgrama acomulado de las primeras 1000 pares (1000 RGB,NIR).
-<img width="768" height="316" alt="image" src="https://github.com/user-attachments/assets/a853a60d-d07b-4261-9122-db69f8c24068" />
-
-<img width="636" height="350" alt="image" src="https://github.com/user-attachments/assets/b8b9769a-b8dc-4bf7-9ea9-531b37abc94d" />
-
-Forma de anotacion:
- - 554 605 607 558 1004 996 1016 1021 ->  las 4 esquinas del polígono (x1, x2, x3, x4, y1, y2, y3, y4).
-   
-<img width="481" height="504" alt="image" src="https://github.com/user-attachments/assets/03d258b8-a8dd-431c-862d-bd17c1bd380f" />
-
-Se  puede observar en la parte inferior de la imagen, las bounding boxes de el objeto etiquetado.
-Si se desea ver la bouding box con solo la informacion dentro de la caja delimitadora, con una mascara, nos queda de la siguiente forma, el mismo objeto de la primera imagen:
-
-<img width="515" height="276" alt="image" src="https://github.com/user-attachments/assets/7c954d74-964e-4b27-9914-41d6658467cd" />
-
-Ahora bien, se discrimino cada bounding box segun la clase, para asi, de forma analoga al estudio de covertura terrestre, generar una densidad de probabilidad para cada clase, siendo los resultados obtenidos los siguientes para todas las clases etiquetadas.
-
-<img width="990" height="1490" alt="image" src="https://github.com/user-attachments/assets/d7c36ddd-aded-4049-b8a9-2beb98a2dbc2" />
+**Formato de anotación:**
+- 554 605 607 558 1004 996 1016 1021
+- (x1, x2, x3, x4, y1, y2, y3, y4)
 
 
-## ETAPA 4 - Exploracion de datos extraidos de Queen-Bee y comparacion con datasets explorados
-Luego de identificar las densidades de probabildiades correspondientes para cada clase del dataset vedai, se planeteo el mismo proceso para una muestra del conjunto NIR propio, de forma que se pueda comparar los canales NIR del modulo KBEE y del dataset VEDAI, de lo cual se obtuvieron las siguientes densidades de probabilidades, ya normalizadas.
-<img width="1189" height="990" alt="image" src="https://github.com/user-attachments/assets/4dd2c8d2-6d92-49d8-9381-9f697f438b73" />
-Ahora bien, asosiada a la grafica anterior, se designo 2 metricas probabilisticas para comparar las 2 densidades de probabilidad y ver que tan cercanas son entre ellas.
-### Correlacion de Pearson
-Es una matrica estadsitica que define un valores entre -1 (correlacion negativa perfecta), +1(correlacion positiva perfecta), 0(no hay correlacion), y valores intermedios entre -1 y +1 que indican la tendencia de las muestras.
-### Chi-cuadrado
-Es una metrica estadistica capaz de comparar 2 frecuencias estadisticas, en este caso no hay una muestra esperada o una observada, por lo que simplemente sera una metrica capaz de cuantificar que tan similares son nuestras 2 distribuciones.
-<img width="631" height="165" alt="image" src="https://github.com/user-attachments/assets/bbfa3f92-a795-4ca2-8ad8-19636ba71a67" />
+<p align="center">
+  <img width="481" height="504" src="https://github.com/user-attachments/assets/03d258b8-a8dd-431c-862d-bd17c1bd380f" />
+</p>
+
+Se visualizaron las *bounding boxes* y las máscaras correspondientes:
+
+<p align="center">
+  <img width="515" height="276" src="https://github.com/user-attachments/assets/7c954d74-964e-4b27-9914-41d6658467cd" />
+</p>
+
+Luego, se generaron las **densidades de probabilidad por clase**:
+
+<p align="center">
+  <img width="990" height="1490" src="https://github.com/user-attachments/assets/d7c36ddd-aded-4049-b8a9-2beb98a2dbc2" />
+</p>
+
+---
+
+## 🌱 Etapa 4 – Comparación con datos propios (Queen-Bee)  
+
+Se replicó el proceso anterior sobre datos **NIR propios** del módulo Queen-Bee, comparándolos con los del dataset VEDAI.  
+Se obtuvieron las siguientes **densidades de probabilidad normalizadas**:
+
+<p align="center">
+  <img width="1189" height="990" src="https://github.com/user-attachments/assets/4dd2c8d2-6d92-49d8-9381-9f697f438b73" />
+</p>
+
+### 📈 Métricas de comparación  
+
+#### Correlación de Pearson  
+Métrica estadística que mide la relación lineal entre dos variables:  
+- **+1:** correlación positiva perfecta  
+- **–1:** correlación negativa perfecta  
+- **0:** sin correlación  
+
+#### Chi-cuadrado  
+Métrica que compara dos distribuciones de frecuencia y cuantifica su grado de similitud.  
+
+<p align="center">
+  <img width="631" height="165" src="https://github.com/user-attachments/assets/bbfa3f92-a795-4ca2-8ad8-19636ba71a67" />
+</p>
+
+---
+
+## 🧠 Etapa 5 – Conformación del conjunto de datos final  
+
+Tras analizar los datos extraídos de Queen-Bee, se definieron dos conjuntos de datos.  
+El **conjunto L1** será el utilizado para el desarrollo del modelo de IA para reconocimiento de objetos.
+
+<p align="center">
+  <img width="611" height="541" src="https://github.com/user-attachments/assets/2898d412-d39e-4768-9670-a91536854d42" />
+</p>
+
+---
+
+## 📊 Etapa 6 – Evaluación y validación con datos QBee  
+**Estado:** No iniciado.
+
+---
+
+## 🧾 Etapa 7 – Análisis de resultados y redacción técnica  
+**Estado:** No iniciado.
+
+---
+
+## 🔎 Entrada (2 imágenes)  
+
+El sistema trabaja con dos imágenes:  
+- **VIS:** rango 400–700 nm  
+- **NIR:** rango 825–875 nm  
+
+<p align="center">
+  <img width="636" height="350" src="https://github.com/user-attachments/assets/f0eefd3b-2d63-487e-ad4c-a4c8cc2b6d68" />
+</p>
+
+---
+
+## 💬 Autor  
+
+**Juan Ángel**  
+Ingeniero Físico | Especialización en Ciencia de Datos  
+Proyecto Avanzado 1 – 2025  
 
 
-## ETAPA 5 - Conformacion de conjunto de datos a utilizar para modelo AI
-Luego de explorar los datos extraidos de la QUEEN-BEE, se definio la conformacion de 2 conjuntos de datos, distribuidos de la siguiente manera, de los cuales  L1 sera el conjunto final utilizado para el desarrollo del modelo de inteligencia artificial para reconocimiento de objetos.
-
-<img width="611" height="541" alt="Diagrama sin título" src="https://github.com/user-attachments/assets/2898d412-d39e-4768-9670-a91536854d42" />
-
-
-## ETAPA 6 - Evaluación y validación con datos QBee
-No iniciado.
-## ETAPA 7 - Análisis de resultados y redacción técnica
-No iniciado.
-# Entrada (2 imagenes)
-Dos imagenes, una en el espectro visible y otra en el infrarojo cercano.
-Idealmente VIS:400–700 nm NIR: 825–875 nm
-<img width="636" height="350" alt="image" src="https://github.com/user-attachments/assets/f0eefd3b-2d63-487e-ad4c-a4c8cc2b6d68" />
-
-
-
+**Formato de anotación:**  
