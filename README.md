@@ -62,7 +62,16 @@ Ahora bien, se discrimino cada bounding box segun la clase, para asi, de forma a
 
 
 ## ETAPA 4 - Exploracion de datos extraidos de Queen-Bee y comparacion con datasets explorados
-En Desarrollo.
+Luego de identificar las densidades de probabildiades correspondientes para cada clase del dataset vedai, se planeteo el mismo proceso para una muestra del conjunto NIR propio, de forma que se pueda comparar los canales NIR del modulo KBEE y del dataset VEDAI, de lo cual se obtuvieron las siguientes densidades de probabilidades, ya normalizadas.
+<img width="1189" height="990" alt="image" src="https://github.com/user-attachments/assets/4dd2c8d2-6d92-49d8-9381-9f697f438b73" />
+Ahora bien, asosiada a la grafica anterior, se designo 2 metricas probabilisticas para comparar las 2 densidades de probabilidad y ver que tan cercanas son entre ellas.
+### Correlacion de Pearson
+Es una matrica estadsitica que define un valores entre -1 (correlacion negativa perfecta), +1(correlacion positiva perfecta), 0(no hay correlacion), y valores intermedios entre -1 y +1 que indican la tendencia de las muestras.
+### Chi-cuadrado
+Es una metrica estadistica capaz de comparar 2 frecuencias estadisticas, en este caso no hay una muestra esperada o una observada, por lo que simplemente sera una metrica capaz de cuantificar que tan similares son nuestras 2 distribuciones.
+<img width="631" height="165" alt="image" src="https://github.com/user-attachments/assets/bbfa3f92-a795-4ca2-8ad8-19636ba71a67" />
+
+
 ## ETAPA 5 - Conformacion de conjunto de datos a utilizar para modelo AI
 Luego de explorar los datos extraidos de la QUEEN-BEE, se definio la conformacion de 2 conjuntos de datos, distribuidos de la siguiente manera, de los cuales  L1 sera el conjunto final utilizado para el desarrollo del modelo de inteligencia artificial para reconocimiento de objetos.
 
