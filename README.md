@@ -183,7 +183,7 @@ El sistema trabaja con dos imágenes:
 ## 💬 Autor  
 
 **Juan Ángel**  
-Ingeniero Físico | Especialización en Ciencia de Datos  
+Estudiante de Ingenieria Física
 Proyecto Avanzado 1 – 2025  
 
 
