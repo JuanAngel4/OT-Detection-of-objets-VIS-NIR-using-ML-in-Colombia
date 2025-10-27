@@ -14,7 +14,7 @@ El estudio aborda la **composición espectral en múltiples bandas** para objeto
 
 ---
 
-## 🧩 Etapa 1 – Revisión del estado del arte  
+## Etapa 1 – Revisión del estado del arte  
 
 Se realizó un estudio físico y computacional de las bases del problema, utilizando los **coeficientes de Fresnel** y su relación con el **índice de reflexión** e **intensidad asociada** de cada material.  
 Esto permitió comprender la naturaleza **estocástica y determinista** de la obtención de imágenes digitales.
@@ -24,12 +24,12 @@ Esto permitió comprender la naturaleza **estocástica y determinista** de la ob
 
 ---
 
-## 🛰️ Etapa 2 – Exploración del espacio N-dimensional conformado por imágenes multibanda  
+## Etapa 2 – Exploración del espacio N-dimensional conformado por imágenes multibanda  
 
 Se exploraron diversos datasets de clasificación y segmentación de objetos.  
 Bajo criterios de **resolución espacial**, **bandas espectrales**, **calidad de anotaciones** y **relevancia temática**, se seleccionaron los siguientes conjuntos:
 
-### 📘 Dataset VEDAI  
+### Dataset VEDAI  
 
 - **Nombre:** Vehicle Detection in Aerial Imagery (VEDAI)  
 - **Descripción:** Ortofotografías aéreas de Utah (EE. UU.) con resolución de 12,5 cm/píxel.  
@@ -38,7 +38,7 @@ Bajo criterios de **resolución espacial**, **bandas espectrales**, **calidad de
 - **Anotaciones:** Bounding boxes en más de 1.200 vehículos, incluyendo automóviles, furgonetas, camiones, pickups y autobuses.  
 - **Aplicación:** Detección de objetos en imágenes aéreas de alta resolución.
 
-### 📗 Dataset MBRSC (Humans in the Loop)  
+### Dataset MBRSC (Humans in the Loop)  
 
 - **Origen:** Mohammed Bin Rashid Space Center (Dubái)  
 - **Etiquetado:** Segmentación semántica *pixel-wise* con 6 clases: edificios, tierra, carreteras, vegetación, agua y no etiquetado.  
@@ -48,14 +48,14 @@ Bajo criterios de **resolución espacial**, **bandas espectrales**, **calidad de
 
 ---
 
-## 🔬 Etapa 3 – Estudio multiespectral de datasets seleccionados (`data_exploration`)  
+## Etapa 3 – Estudio multiespectral de datasets seleccionados (`data_exploration`)  
 
 En la carpeta `data_exploration` se estudió cada dataset, sus anotaciones y representaciones de etiquetas.  
 Los resultados y conclusiones se almacenan en la carpeta `relevant_outputs`.
 
 ---
 
-### 🗺️ Data_Exploration_land_cover.py  
+### Data_Exploration_land_cover.py  
 
 Se generó un **histograma general** de todas las imágenes, analizando la densidad de probabilidad de cada canal.
 
@@ -87,7 +87,7 @@ Finalmente, se generaron **máscaras por clase** para analizar la densidad de pr
 
 ---
 
-### 🚗 Data_Exploration_object_detection  
+### Data_Exploration_object_detection  
 
 Se analizó la estructura del dataset y su anotación.  
 Posteriormente, se generó un **histograma acumulado** de las primeras 1000 imágenes RGB y NIR:
@@ -121,7 +121,7 @@ Luego, se generaron las **densidades de probabilidad por clase**:
 
 ---
 
-## 🌱 Etapa 4 – Comparación con datos propios (Queen-Bee)  
+## Etapa 4 – Comparación con datos propios (Queen-Bee)  
 
 Se replicó el proceso anterior sobre datos **NIR propios** del módulo Queen-Bee, comparándolos con los del dataset VEDAI.  
 Se obtuvieron las siguientes **densidades de probabilidad normalizadas**:
@@ -130,7 +130,7 @@ Se obtuvieron las siguientes **densidades de probabilidad normalizadas**:
   <img width="1189" height="990" src="https://github.com/user-attachments/assets/4dd2c8d2-6d92-49d8-9381-9f697f438b73" />
 </p>
 
-### 📈 Métricas de comparación  
+### Métricas de comparación  
 
 #### Correlación de Pearson  
 Métrica estadística que mide la relación lineal entre dos variables:  
@@ -147,7 +147,7 @@ Métrica que compara dos distribuciones de frecuencia y cuantifica su grado de s
 
 ---
 
-## 🧠 Etapa 5 – Conformación del conjunto de datos final  
+## Etapa 5 – Conformación del conjunto de datos final  
 
 Tras analizar los datos extraídos de Queen-Bee, se definieron dos conjuntos de datos.  
 El **conjunto L1** será el utilizado para el desarrollo del modelo de IA para reconocimiento de objetos.
@@ -158,17 +158,17 @@ El **conjunto L1** será el utilizado para el desarrollo del modelo de IA para r
 
 ---
 
-## 📊 Etapa 6 – Evaluación y validación con datos QBee  
+## Etapa 6 – Evaluación y validación con datos QBee  
 **Estado:** No iniciado.
 
 ---
 
-## 🧾 Etapa 7 – Análisis de resultados y redacción técnica  
+## Etapa 7 – Análisis de resultados y redacción técnica  
 **Estado:** No iniciado.
 
 ---
 
-## 🔎 Entrada (2 imágenes)  
+## Entrada (2 imágenes)  
 
 El sistema trabaja con dos imágenes:  
 - **VIS:** rango 400–700 nm  
@@ -180,7 +180,7 @@ El sistema trabaja con dos imágenes:
 
 ---
 
-## 💬 Autor  
+## Autor  
 
 **Juan Ángel**  
 Estudiante de Ingenieria Física
