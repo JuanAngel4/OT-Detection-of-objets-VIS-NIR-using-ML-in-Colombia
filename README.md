@@ -6,6 +6,7 @@
 This repository contains the full development of a research project focused on evaluating **cross-domain spectral compatibility between VIS–NIR datasets** and implementing **unsupervised land-cover classification** using aerial imagery captured by UAVs.  
 The study integrates physical principles of optical sensing, computer vision techniques, and machine learning methods applied to environmental scenarios in Colombia.
 
+(_*In docs you can find the draft, scientific paper and a poster that sumarized all  the study and the results*_)
 ---
 
 ## Overview
